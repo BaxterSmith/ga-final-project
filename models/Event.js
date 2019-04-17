@@ -5,6 +5,7 @@ const EventSchema = new Schema({
     title: String,
     numAttendees: Number,
     date: String,
+    time: String,
     description: String,
     store: {}
 });

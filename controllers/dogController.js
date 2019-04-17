@@ -28,6 +28,11 @@ const dogController = {
             res.json(dog);
         });
     },
+    delete: (req, res) => {
+        Dog.findByIdAndDelete(req.params.dogId).then(() => {
+            res.redirect('/');
+        });
+    }
 }
 
 module.exports = dogController;

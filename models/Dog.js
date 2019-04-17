@@ -8,6 +8,7 @@ const DogSchema = new Schema({
     breed: String,
     coatColor: String,
     weight: Number,
+    imgLink: String,
     store: {}
 });
 

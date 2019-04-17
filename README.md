@@ -7,8 +7,13 @@ PupTopia is a web application related to dog adoption. It allows users to add a 
 ### Technologies Used
 
 > JavaScript
+
 > Node
+
 > Express
+
 > React
+
 > MongoDB
+
 > Mongoose

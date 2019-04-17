@@ -18,6 +18,16 @@ const dogController = {
             res.json(dog)
         });
     },
+    edit: (req, res) => {
+        Dog.findById(req.params.dogId).then(dog => {
+            res.json(dog)
+        });
+    },
+    update: (req, res) => {
+        Dog.findByIdAndUpdate(req.params.dogId, req.body, {new: true}).then((dog) => {
+            res.json(dog);
+        });
+    },
 }
 
 module.exports = dogController;

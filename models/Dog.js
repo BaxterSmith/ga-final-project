@@ -7,7 +7,8 @@ const DogSchema = new Schema({
     gender: String,
     breed: String,
     coatColor: String,
-    weight: Number
+    weight: Number,
+    store: {}
 });
 
 module.exports = mongoose.model('Dog', DogSchema);

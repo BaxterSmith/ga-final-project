@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const DogSchema = new Schema({
     name: String,
-    age: Number,
+    age: String,
     gender: String,
     breed: String,
     coatColor: String,

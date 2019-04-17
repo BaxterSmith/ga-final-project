@@ -12,20 +12,31 @@ const poochPeddler = new Store({
 
 const critterCastle = new Store({
     name: 'Critter Castle',
-    address: '',
-    phoneNumber: '',
-    email: ''
+    address: '54321 Poplar Street, Pittsburgh, PA 15230',
+    phoneNumber: '(412) 555-7890',
+    email: 'doglover@crittercastleburgh.com'
 });
 
 const jack = new Dog({
     name: 'Jack',
-    age: 2,
+    age: '2 years',
     gender: 'male',
     breed: 'Jack Russell terrier',
     coatColor: 'brown and white',
     weight: 17,
     imgLink: 'https://dog.ceo/api/breed/terrier/russell/images/random',
     store: {poochPeddler}
+});
+
+const ingrid = new Dog({
+    name: 'Ingrid',
+    age: '11 months',
+    gender: 'female',
+    breed: 'whippet',
+    coatColor: 'gray',
+    weight: 28,
+    imgLink: 'https://dog.ceo/api/breed/whippet/images/random',
+    store: {critterCastle}
 });
 
 const poochPalooza = new Event({

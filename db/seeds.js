@@ -39,6 +39,17 @@ const ingrid = new Dog({
     store: {critterCastle}
 });
 
+const fifi = new Dog({
+    name: 'Fifi',
+    age: '1 year',
+    gender: 'female',
+    breed: 'standard poodle',
+    coatColor: 'white',
+    weight: 30,
+    imgLink: 'https://dog.ceo/api/breed/poodle/standard/images/random',
+    store: {poochPeddler}
+});
+
 const poochPalooza = new Event({
     title: 'Pooch Palooza',
     numAttendees: 50,

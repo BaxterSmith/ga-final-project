@@ -8,7 +8,7 @@ class HomePage extends Component {
         dogs: [{}]
     };
     componentDidMount = () => {
-        axios.get(`/dogs`)
+        axios.get(`/api/v1/dogs/`)
             .then(res => {
                 this.setState({
                     dogs: res.data
@@ -20,6 +20,7 @@ class HomePage extends Component {
             <div>
                 <h1>PupTopia</h1>
                 <Link to="/dogs/new">Add A Dog</Link>
+                <h3>Dogs List</h3>
                 <ul>
                     {this.state.dogs.map((dog) => (
                         <li>
@@ -27,6 +28,7 @@ class HomePage extends Component {
                         </li>
                     ))}
                 </ul>
+                <p>Copyright 2019 Baxter Smith</p>
             </div>
         );
     }

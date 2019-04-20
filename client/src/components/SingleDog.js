@@ -30,6 +30,11 @@ class SingleDog extends Component {
             <div>
                 <h1>PupTopia</h1>
                 <p>Name: {this.state.dog.name}</p>
+                <p>Age: {this.state.dog.age}</p>
+                <p>Gender: {this.state.dog.gender}</p>
+                <p>Breed: {this.state.dog.breed}</p>
+                <p>Coat Color: {this.state.dog.coatColor}</p>
+                <p>Store: {this.state.dog.store.name}</p>
                 <p></p>
                 <Link to="/dogs">Back to Home</Link>
                 <p>Copyright 2019 Baxter Smith</p>

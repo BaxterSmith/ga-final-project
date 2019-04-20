@@ -15,6 +15,16 @@ class NewDogForm extends Component {
         },
         redirectToHome: false
     };
+    handleChange = (evt) => {
+        const clonedFormData = {...this.state.formData}
+        clonedFormData[evt.target.name] = evt.target.value
+        this.setState({formData: clonedFormData});
+    }
+    handleSubmit = async (evt) => {
+        evt.preventDefault();
+        await axios.post('/dogs', this.state.formData);
+        this.setState({redirectToHome: true});
+    }
     render() {
         if (this.state.redirectToHome) {
             return (<Redirect to="/dogs"/>);

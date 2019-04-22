@@ -10,9 +10,6 @@ const PageStyle = styled.div`
     padding: 5px;
     border: 2px solid #ff1a1a;
 `;
-const TitleStyle = styled.h1`
-    color: #66ccff;
-`;
 const ListStyle = styled.li`
     list-style-type: none;
 `;
@@ -33,7 +30,7 @@ class HomePage extends Component {
         return (
             <div>
                 <PageStyle>
-                <h1><TitleStyle>PupTopia</TitleStyle></h1>
+                <h1>PupTopia</h1>
                 <Link to="/dogs/new">Add A Dog</Link>
                 <h3>Dogs List</h3>
                 <ul>

@@ -3,6 +3,13 @@ import { Redirect, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
+const PageStyle = styled.div`
+    background: #ff1a1a;
+    text-align: center;
+    color: #000066;
+    padding: 5px;
+`;
+
 class NewDogForm extends Component {
     state = {
         formData: {
@@ -31,6 +38,7 @@ class NewDogForm extends Component {
         }
         return (
             <div>
+                <PageStyle>
                 <h1>PupTopia</h1>
                 <h2>Add A New Dog</h2>
                 <form action="/dogs" method="POST" onSubmit={this.handleSubmit}>
@@ -62,6 +70,7 @@ class NewDogForm extends Component {
                 </form>
                 <Link to="/dogs">Back to Home</Link>
                 <p>Copyright 2019 Baxter Smith</p>
+                </PageStyle>
             </div>
         );
     }

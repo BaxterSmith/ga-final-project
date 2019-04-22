@@ -9,9 +9,6 @@ const PageStyle = styled.div`
     color: #000066;
     padding: 5px;
 `;
-const TitleStyle = styled.h1`
-    color: #66ccff;
-`;
 
 class EditDogForm extends Component {
     state = {
@@ -79,6 +76,8 @@ class EditDogForm extends Component {
                             <input type="text" name="imgLink" id="imgLink" value={this.state.formData.imgLink} onChange={this.handleChange}/>
                         </div>
                     </form>
+                    <Link to="/dogs">Back to Home</Link>
+                    <p>Copyright 2019 Baxter Smith</p>
                 </PageStyle> 
             </div>
         );

@@ -9,9 +9,6 @@ const PageStyle = styled.div`
     color: #000066;
     padding: 5px;
 `;
-const TitleStyle = styled.h1`
-    color: #66ccff;
-`;
 
 class SingleDog extends Component {
     state = {
@@ -29,7 +26,7 @@ class SingleDog extends Component {
         return (
             <div>
                 <PageStyle>
-                <h1><TitleStyle>PupTopia</TitleStyle></h1>
+                <h1>PupTopia</h1>
                 <img src={this.state.dog.imgLink} alt="dog"/>
                 <p>Name: {this.state.dog.name}</p>
                 <p>Age: {this.state.dog.age}</p>
@@ -37,7 +34,7 @@ class SingleDog extends Component {
                 <p>Breed: {this.state.dog.breed}</p>
                 <p>Coat Color: {this.state.dog.coatColor}</p>
                 <p>Store: {this.state.dog.store}</p>
-                <Link to={`/${this.state.dog._id}/edit`}>Edit Dog</Link>
+                <Link to={`/dogs/${this.state.dog._id}/edit`}>Edit Dog</Link>
                 <form action={`/${this.state.dog._id}?_method=DELETE`} method="POST">
                     <input type="submit" value="Delete Dog"/>
                 </form>

@@ -28,16 +28,22 @@ class SingleDog extends Component {
     render() {
         return (
             <div>
-                <h1>PupTopia</h1>
+                <PageStyle>
+                <h1><TitleStyle>PupTopia</TitleStyle></h1>
+                <img src={this.state.dog.imgLink} alt="dog"/>
                 <p>Name: {this.state.dog.name}</p>
                 <p>Age: {this.state.dog.age}</p>
                 <p>Gender: {this.state.dog.gender}</p>
                 <p>Breed: {this.state.dog.breed}</p>
                 <p>Coat Color: {this.state.dog.coatColor}</p>
-                <p>Store: {this.state.dog.store.name}</p>
-                <p></p>
+                <p>Store: {this.state.dog.store}</p>
+                <Link to={`/${this.state.dog._id}/edit`}>Edit Dog</Link>
+                <form action={`/${this.state.dog._id}?_method=DELETE`} method="POST">
+                    <input type="submit" value="Delete Dog"/>
+                </form>
                 <Link to="/dogs">Back to Home</Link>
                 <p>Copyright 2019 Baxter Smith</p>
+                </PageStyle>
             </div>
         );
     }

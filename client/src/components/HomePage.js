@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
+const PageStyle = styled.div`
+    background: #ff1a1a;
+    text-align: center;
+    color: #000066;
+    padding: 5px;
+    border: 2px solid #ff1a1a;
+`;
+const TitleStyle = styled.h1`
+    color: #66ccff;
+`;
+const ListStyle = styled.li`
+    list-style-type: none;
+`;
+
 class HomePage extends Component {
     state = {
         dogs: [{}]
@@ -18,17 +32,19 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <h1>PupTopia</h1>
+                <PageStyle>
+                <h1><TitleStyle>PupTopia</TitleStyle></h1>
                 <Link to="/dogs/new">Add A Dog</Link>
                 <h3>Dogs List</h3>
                 <ul>
                     {this.state.dogs.map((dog) => (
-                        <li>
+                        <li><ListStyle>
                             <Link to={`/dogs/${dog._id}`}>{dog.name}</Link>
-                        </li>
+                        </ListStyle></li>
                     ))}
                 </ul>
                 <p>Copyright 2019 Baxter Smith</p>
+                </PageStyle>
             </div>
         );
     }

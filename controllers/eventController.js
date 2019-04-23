@@ -12,6 +12,12 @@ const eventController = {
             res.json(event);
         });
     },
+    show: (req, res) => {
+        let eventId = req.params.eventId;
+        Event.findById(eventId).then(event => {
+            res.json(event)
+        });
+    },
     delete: (req, res) => {
         Event.findByIdAndDelete(req.params.eventId).then((event) => {
             res.json(event);

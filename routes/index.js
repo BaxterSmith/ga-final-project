@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const dogController = require('../controllers/dogController.js');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-router.get('/dogs', dogController.index);
-router.post('/', dogController.create);
-router.get('/:dogId', dogController.show);
-router.get('/:dogId/edit', dogController.edit);
-router.put('/:dogId', dogController.update);
-router.delete('/:dogId', dogController.delete);
+ReactDOM.render(<App />, document.getElementById('root'));
 
-module.exports = router;
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

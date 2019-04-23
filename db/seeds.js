@@ -25,7 +25,7 @@ const jack = new Dog({
     coatColor: 'brown and white',
     weight: 17,
     imgLink: 'https://dog.ceo/api/breed/terrier/russell/images/random',
-    store: {poochPeddler}
+    store: poochPeddler
 });
 
 const ingrid = new Dog({
@@ -36,7 +36,7 @@ const ingrid = new Dog({
     coatColor: 'gray',
     weight: 28,
     imgLink: 'https://dog.ceo/api/breed/whippet/images/random',
-    store: {critterCastle}
+    store: critterCastle
 });
 
 const fifi = new Dog({
@@ -47,7 +47,7 @@ const fifi = new Dog({
     coatColor: 'white',
     weight: 30,
     imgLink: 'https://dog.ceo/api/breed/poodle/standard/images/random',
-    store: {poochPeddler}
+    store: poochPeddler
 });
 
 const poochPalooza = new Event({
@@ -56,5 +56,24 @@ const poochPalooza = new Event({
     date: 'June 7',
     time: '5 p.m. to 8 p.m.',
     description: 'A fun-filled dance party for canines and their owners!',
-    store: {poochPeddler}
+    store: poochPeddler
 });
+
+const groomOff = new Event({
+    title: 'Big-Time Groom-Off Contest',
+    numAttendees: 20,
+    date: 'May 25',
+    time: '11 a.m. to 2 p.m.',
+    description: 'A golden opportunity to style your canine companions!',
+    store: poochPeddler
+});
+
+Dog.remove({})
+    .then(() => Dog.create([jack, ingrid, fifi]))
+    .then(() => Store.create([poochPeddler, critterCastle]))
+    .then(() => Event.create([poochPalooza, groomOff]))
+    .then(() => {
+        console.log('Data seeded successfully!');
+        mongoose.connection.close();
+    })
+    .catch(err => console.log(err, 'error!'));

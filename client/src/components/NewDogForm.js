@@ -18,7 +18,8 @@ class NewDogForm extends Component {
             gender: '',
             breed: '',
             coatColor: '',
-            imgLink: ''
+            imgLink: '',
+            store: ''
         },
         redirectToHome: false
     };
@@ -29,7 +30,7 @@ class NewDogForm extends Component {
     }
     handleSubmit = async (evt) => {
         evt.preventDefault();
-        await axios.post('/dogs', this.state.formData);
+        await axios.post('/api/v1/dogs/', this.state.formData);
         this.setState({redirectToHome: true});
     }
     render() {
@@ -61,6 +62,10 @@ class NewDogForm extends Component {
                     <div>
                         <label for="coatColor">Coat Color</label>
                         <input type="text" name="coatColor" id="coatColor" onChange={this.handleChange}/>
+                    </div>
+                    <div>
+                        <label for="weight">Weight</label>
+                        <input type="number" name="weight" id="weight" onChange={this.handleChange}/>
                     </div>
                     <div>
                         <label for="imgLink">Image Link</label>

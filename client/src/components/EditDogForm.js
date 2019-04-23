@@ -18,13 +18,14 @@ class EditDogForm extends Component {
             gender: '',
             breed: '',
             coatColor: '',
-            imgLink: ''
+            imgLink: '',
+            store: ''
         },
         dog: {},
         redirectToDog: false
     };
     componentDidMount = () => {
-        axios.get(`/dogs/${this.props.match.params.dogId}`)
+        axios.get(`/api/v1/dogs/${this.props.match.params.dogId}/`)
         .then(res => {
             this.setState({
                 formData: res.data
@@ -38,7 +39,7 @@ class EditDogForm extends Component {
     }
     handleSubmit = async (evt) => {
         evt.preventDefault();
-        await axios.put(`/dogs/${this.state.formData._id}`, this.state.formData);
+        await axios.put(`/api/v1/dogs/${this.state.formData._id}/`, this.state.formData);
         this.setState({redirectToDog: true});
     }
     render() {
@@ -75,6 +76,7 @@ class EditDogForm extends Component {
                             <label for="imgLink">Image Link</label>
                             <input type="text" name="imgLink" id="imgLink" value={this.state.formData.imgLink} onChange={this.handleChange}/>
                         </div>
+                        <input type="submit" value="Update Dog"/>
                     </form>
                     <Link to="/dogs">Back to Home</Link>
                     <p>Copyright 2019 Baxter Smith</p>
